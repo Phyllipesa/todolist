@@ -13,10 +13,38 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Base64;
+
+/**
+ * Filtro de Autenticação de Tarefa.
+ *
+ * Esta classe atua como um filtro para autenticar solicitações relacionadas a tarefas.
+ * Ela verifica as informações de autenticação na solicitação, valida o usuário e a senha e,
+ * se bem-sucedido, permite que a solicitação prossiga.
+ * Caso contrário, ela retorna um erro de autenticação (401 Unauthorized).
+ */
 @Component
 public class FilterTaskAuth extends OncePerRequestFilter {
+
+    /**
+     * Recebe um bean do tipo IUserRepository por injeção de dependência.
+     */
     @Autowired
     private IUserRepository userRepository;
+
+    /**
+     * Implementação do filtro de autenticação.
+     *
+     * Este método é chamado para cada solicitação e executa a lógica de autenticação,
+     * validando as credenciais do usuário. Se as credenciais forem válidas,
+     * a solicitação continuará com o atributo "idUser" definido como o ID do usuário autenticado.
+     * Caso contrário, uma resposta de erro 401 Unauthorized será retornada.
+     *
+     * @param request A solicitação HTTP recebida.
+     * @param response A resposta HTTP a ser enviada.
+     * @param filterChain O encadeamento de filtros a ser executado.
+     * @throws ServletException Se ocorrer uma exceção de servlet.
+     * @throws IOException Se ocorrer um erro de entrada/saída.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 

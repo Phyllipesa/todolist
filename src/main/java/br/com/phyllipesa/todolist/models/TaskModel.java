@@ -10,6 +10,13 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+/**
+ * Modelo de Tarefa.
+ *
+ * Esta classe representa uma tarefa na aplicação.
+ * Ela inclui informações como ID, descrição, título, datas de início e término,
+ * prioridade, ID do usuário e data de criação.
+ */
 @Entity(name = "tb_tasks")
 public class TaskModel {
 @Id
@@ -26,9 +33,24 @@ public class TaskModel {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    /**
+     * Construtor padrão.
+     */
     public TaskModel() {
     }
 
+    /**
+     * Construtor com todos os atributos.
+     *
+     * @param id O ID da tarefa.
+     * @param description A descrição da tarefa.
+     * @param title O título da tarefa.
+     * @param startAt A data de início da tarefa.
+     * @param endAt A data de término da tarefa.
+     * @param priority A prioridade da tarefa.
+     * @param idUser O ID do usuário associado à tarefa.
+     * @param createdAt A data de criação da tarefa.
+     */
     public TaskModel(
             UUID id,
             String description,
