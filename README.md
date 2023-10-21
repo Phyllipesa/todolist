@@ -14,12 +14,7 @@ Este projeto tem como objetivo demonstrar o desenvolvimento de uma aplicação w
 
 Além disso, o projeto inclui controladores (`TaskController` e `UserController`) para lidar com operações relacionadas a tarefas e usuários.
 
-## Tecnologias Utilizadas
-
-- Java
-- Apache Maven
-
-## Como Executar
+## Executar Localmente
 
 Para executar este projeto, você precisará de uma instalação do Apache Maven. Depois de configurar o ambiente, siga estas etapas:
 
@@ -35,3 +30,16 @@ Para executar este projeto, você precisará de uma instalação do Apache Maven
 
    ```bash
    mvn spring-boot:run
+   
+
+## Tecnologias Utilizadas
+
+- Java
+- Apache
+
+  
+## Autores
+
+    @phyllipesa - Desenvolvimento do projeto
+    @Rocketseat - Commit inicial
+
